@@ -1,0 +1,17 @@
+{
+  "name": "@instago/telegram",
+  "version": "1.0.0",
+  "description": "Module telegram",
+  "main": "index.js",
+  "type": "commonjs",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "instago",
+    "telegram"
+  ],
+  "files": [
+    "index.js",
+    "ReadMe.MD",
+    "LICENSE"
+  ]
+}
