@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>telegram Documentation</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 48px 24px;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+      }
+      .intro {
+        font-size: 16px;
+        color: #e2e8f0;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #cbd5f5;
+      }
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+      a {
+        color: #93c5fd;
+      }
+      .section {
+        margin-top: 28px;
+      }
+      .muted {
+        color: #94a3b8;
+        font-size: 14px;
+        margin: 6px 0 0;
+      }
+      .code {
+        background: #0b1220;
+        border: 1px solid #1e293b;
+        border-radius: 10px;
+        padding: 16px;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>module/telegram - V8 module</h1>
+      <p class="intro">Send Telegram messages from your workflows with a small, focused helper. It is designed for straightforward text and photo notifications without extra ceremony.</p>
+      <p class="muted">Learn more at <a href="https://instago.ai" target="_blank" rel="noopener">https://instago.ai</a>.</p>
+      <div class="section">
+        <h2>Technical reference</h2>
+        <h1>module/telegram - V8 module</h1>
+<p>Send Telegram messages from your workflows with a small, focused helper. It is designed for straightforward text and photo notifications without extra ceremony.</p>
+<p>Use it when you want to push updates to a chat quickly and keep your workflow steps concise. See https://instago.ai for more on the runtime environment.</p>
+<h2>Technical reference</h2>
+<p>Exports</p>
+<ul>
+<li><code>configure({ botToken?, chatId?, debug? })</code></li>
+<li><code>sendText({ text, chatId?, parse_mode?, disable_web_page_preview?, botToken? })</code></li>
+<li><code>sendPhoto({ url, caption?, chatId?, parse_mode?, botToken? })</code></li>
+</ul>
+<p>Usage</p>
+<ul>
+<li><code>sendText</code> sends a text message to the target chat.</li>
+<li><code>sendPhoto</code> sends a photo by URL, with an optional caption.</li>
+<li>Each call can provide <code>botToken</code> and <code>chatId</code> directly, or use values set via <code>configure</code>.</li>
+</ul>
+<p>Configuration</p>
+<ul>
+<li>Optional env keys:</li>
+<li><code>telegram.botToken</code></li>
+<li><code>telegram.chatId</code></li>
+<li>Optional configure options:</li>
+<li><code>botToken</code></li>
+<li><code>chatId</code></li>
+<li><code>debug</code> (true | &#x27;1&#x27; | &#x27;true&#x27;)</li>
+</ul>
+<p>Examples</p>
+<pre class="code"><code>
+const tg = require(&#x27;telegram@latest&#x27;);
+
+tg.configure({ botToken: env.telegram.botToken, chatId: env.telegram.chatId });
+await tg.sendText({ text: &#x27;Hello Telegram!&#x27; });
+</code></pre>
+<pre class="code"><code>
+const tg = require(&#x27;telegram@latest&#x27;);
+
+await tg.sendPhoto({
+  url: &#x27;https://example.com/pic.jpg&#x27;,
+  caption: &#x27;Daily update&#x27;,
+  botToken: env.telegram.botToken,
+  chatId: env.telegram.chatId
+});
+</code></pre>
+      </div>
+      
+    </main>
+  </body>
+</html>

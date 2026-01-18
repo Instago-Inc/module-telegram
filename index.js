@@ -5,8 +5,8 @@
 // - sendPhoto({ url, caption?, chatId?, parse_mode? })
 
 (function(){
-  const httpx = require('http@1.0.0');
-  const log = require('log@1.0.0').create('telegram');
+  const httpx = require('http@latest');
+  const log = require('log@latest').create('telegram');
   const state = { botToken: null, chatId: null, debug: false };
 
   function configure(opts){
